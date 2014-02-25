@@ -3,34 +3,8 @@ body {
 }
 
 .full {
-	background: url('/img/bridget.jpg') no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
   	background-size: cover;
-}
-
- .pictureFlake {
-    position:absolute;
-    left:-500px;
-    z-index:10;
-    position:block;
-}
-
-.pictureFlake img{
-    border-style:solid;
-    border-color: #333333;
-	border-width:5px;
-}
-
-.pictureFlake p{
-    border-style:solid;
-    border-top-style: none;
-	border-width:5px;
-    border-color: #333333;
-	width: 300px;
-	background: #777777;
-	color: #cccccc;
-	padding: 5px;
-	word-wrap:break-word;
 }
