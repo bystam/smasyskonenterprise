@@ -60,7 +60,7 @@ hr {
 
 .box {
   background: #fff;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.9);
   margin-bottom: 20px;
   padding: 30px 15px;
 }
@@ -147,7 +147,7 @@ footer p {
   border: none;
 }
 
-.nav>li {
+.nav>li>a {
   padding: 35px;
 }
 
@@ -161,4 +161,6 @@ footer p {
   display: table;
   table-layout: fixed;
   font-size: 1.25em;
+}
+
 }

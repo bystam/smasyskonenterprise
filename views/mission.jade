@@ -1,0 +1,14 @@
+extends layout
+
+block mission
+	.container
+		.row
+			.box
+				.col-lg-12.text-center
+					h2.intro-text.text-center
+						| Build a website
+						strong worth visiting
+					form(method='post', action='/')
+						input(type='hidden', name='mission', value=id)
+						input(type='text', name='passphrase')
+						input(type='submit')
