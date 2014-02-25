@@ -10,26 +10,49 @@ app.use(express.static(__dirname + '/public'))
 app.use(express.urlencoded());
 
 app.get('/', function(req, res) {
-	res.render('mission', {
-		title : 'Småsyskonöverlämning 2014',
-		missionurl: 'http://www.youtube.com/embed/ee925OTFBCA',
-		id : 1
-    });
+	res.render('mission', firstMission);
 });
 
+var firstMission = {
+	title : 'Fysikens jag',
+	missionurl: 'http://www.youtube.com/embed/ee925OTFBCA',
+	passphrase : 'lolfi golfi',
+	id : 1
+}
+
+var secondMission = {
+	title : 'Visdomskammaren',
+	missionurl : '//www.youtube.com/embed/pTZ2Tp9yXyM',
+	passphrase : 'snuttefilt',
+	id : 2
+}
+
+var thirdMission = {
+	title : 'Syskonkärlekens vagga',
+	missionurl : '//www.youtube.com/embed/XL2y5h-4vVc',
+	passphrase : 'alla för en',
+	id : 3
+}
+
+var missions = Array();
+missions.push(firstMission);
+missions.push(secondMission);
+missions.push(thirdMission);
+
 var validateMissionPassphase = function (req, callback) {
-	var result = {};
-	if (req.body.passphrase === 'lolfi golfi') {
-		result.url = "google.com";
-	} else {
-		result.url = "felsomfan.se";
-	}
-	callback(result);
+	var mission = null;
+	currentMission = missions[req.body.mission-1];
+	if (req.body.passphrase === currentMission.passphrase)
+		mission = missions[req.body.mission];
+	else
+		mission = currentMission;
+	// TODO handle when finished
+	callback(mission);
 }
 
 app.post('/', function (req, res) {
-	validateMissionPassphase(req, function (result) {
-		console.log(result.url);
+	validateMissionPassphase(req, function (mission) {
+		res.render ('mission', mission);
 	});
 });
 
