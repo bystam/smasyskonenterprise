@@ -1,0 +1,20 @@
+{
+  "name": "smasyskonenterprise",
+  "version": "0.0.0",
+  "description": "smasyskonenterprise ===================",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodeunit tests/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bystam/smasyskonenterprise.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "0ef7bcf0447607ffb3ac74de740c836b16c28d58",
+  "bugs": {
+    "url": "https://github.com/bystam/smasyskonenterprise/issues"
+  }
+}
