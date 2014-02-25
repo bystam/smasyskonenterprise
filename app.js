@@ -12,6 +12,7 @@ app.use(express.urlencoded());
 app.get('/', function(req, res) {
 	res.render('mission', {
 		title : 'Småsyskonöverlämning 2014',
+		missionurl: 'http://www.youtube.com/embed/ee925OTFBCA',
 		id : 1
     });
 });
