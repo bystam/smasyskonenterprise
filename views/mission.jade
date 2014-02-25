@@ -5,9 +5,13 @@ block mission
 		.row
 			.box
 				.col-lg-12.text-center
-					h2.intro-text.text-center
-						| Build a website
-						strong worth visiting
+					h1.text-center Uppdrag
+				.mission
+					iframe(width='560', height='315', src='//www.youtube.com/embed/ee925OTFBCA', frameborder='0', allowfullscreen='allowfullscreen')
+
+		.row
+			.box
+				.col-lg-12.text-center
 					form(method='post', action='/')
 						input(type='hidden', name='mission', value=id)
 						input(type='text', name='passphrase')
