@@ -10,6 +10,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: 400;
+  margin-bottom: 20px;
 }
 
 p {
@@ -62,14 +63,14 @@ hr {
   background: #fff;
   background: rgba(255,255,255,0.7);
   margin-bottom: 50px;
-  padding: 50px;
+  padding: 30px;
 }
 
 #linusbox.box {
 	background: transparent;
 }
 
-.box img {
+#linusbox.box img {
 	height: 33%;
 	width: 33%;
 	display: block;
@@ -78,14 +79,13 @@ hr {
     float: left;
 }
 
-.box img + img {
+#linusbox.box img + img {
 	float: right;
 }
 
-.box img + img + img {
+#linusbox.box img + img + img {
 	float: center;
 }
-
 
 #formbox.box {
 	height: 330px;

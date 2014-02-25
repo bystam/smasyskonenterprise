@@ -9,9 +9,6 @@ app.use(express.logger('dev'));
 app.use(express.static(__dirname + '/public'))
 app.use(express.urlencoded());
 
-app.get('/', function(req, res) {
-	res.render('mission', firstMission);
-});
 
 var firstMission = {
 	title : 'Fysikens jag',
@@ -39,13 +36,21 @@ missions.push(firstMission);
 missions.push(secondMission);
 missions.push(thirdMission);
 
+app.get('/', function(req, res) {
+	firstMission.wronganswer = false;
+	res.render('mission', firstMission);
+});
+
 var validateMissionPassphase = function (req, callback) {
 	var mission = null;
 	currentMission = missions[req.body.mission-1];
-	if (req.body.passphrase === currentMission.passphrase)
+	if (req.body.passphrase === currentMission.passphrase) {
 		mission = missions[req.body.mission];
-	else
+		mission.wronganswer = false;
+	} else {
 		mission = currentMission;
+		mission.wronganswer = true;
+	}
 	// TODO handle when finished
 	callback(mission);
 }

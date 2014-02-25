@@ -4,9 +4,14 @@ block mission
 	.container
 		.row
 			.box#linusbox
-				img(src='img/linus.png')
-				img(src='img/linus.png')
-				img(src='img/linus.png')
+				if wronganswer
+					img(src='img/linusarg.png')
+					img(src='img/linusarg.png')
+					img(src='img/linusarg.png')
+				else
+					img(src='img/linus.png')
+					img(src='img/linus.png')
+					img(src='img/linus.png')
 		.row
 			.box
 				.col-lg-12.text-center
@@ -20,4 +25,4 @@ block mission
 					form.missionform(method='post', action='/')
 						input(type='hidden', name='mission', value=id)
 						input.form-control(type='text', name='passphrase', placeholder='Lösning', autocomplete='off')
-						input.btn.btn-danger(type='submit')
+						input.btn.btn-danger(type='submit', value='Gissa')
