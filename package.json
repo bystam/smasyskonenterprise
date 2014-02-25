@@ -10,6 +10,11 @@
     "type": "git",
     "url": "git://github.com/bystam/smasyskonenterprise.git"
   },
+  "dependencies": {
+    "express": "*",
+    "jade": "*",
+    "nodeunit": "*"
+  },
   "author": "",
   "license": "BSD",
   "readmeFilename": "README.md",
