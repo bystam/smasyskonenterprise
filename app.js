@@ -15,26 +15,32 @@ var firstMission = {
 	missionurl: 'http://www.youtube.com/embed/ee925OTFBCA',
 	passphrase : 'lolfi golfi',
 	id : 1
-}
+};
 
 var secondMission = {
 	title : 'Visdomskammaren',
 	missionurl : '//www.youtube.com/embed/pTZ2Tp9yXyM',
 	passphrase : 'snuttefilt',
 	id : 2
-}
+};
 
 var thirdMission = {
 	title : 'Syskonkärlekens vagga',
 	missionurl : '//www.youtube.com/embed/XL2y5h-4vVc',
 	passphrase : 'alla för en',
 	id : 3
+};
+
+var victory = {
+	title: 'Grattis!',
+	done: true
 }
 
-var missions = Array();
+var missions = [];
 missions.push(firstMission);
 missions.push(secondMission);
 missions.push(thirdMission);
+missions.push(victory);
 
 app.get('/', function(req, res) {
 	firstMission.wronganswer = false;
@@ -59,6 +65,10 @@ app.post('/', function (req, res) {
 	validateMissionPassphase(req, function (mission) {
 		res.render ('mission', mission);
 	});
+});
+
+app.get('/victory', function (req, res) {
+	res.render('mission', victory);
 });
 
 var port = process.env.PORT || 5000;

@@ -16,13 +16,19 @@ block mission
 			.box
 				.col-lg-12.text-center
 					h1.text-center #{title}
-				.mission
-					iframe(src=missionurl, frameborder='0', allowfullscreen='allowfullscreen')
+				if done
+					.victory
+						p Ni är klara, ät kuk och dö.
 
-		.row
-			.box#formbox
-				.col-lg-12.text-center
-					form.missionform(method='post', action='/')
-						input(type='hidden', name='mission', value=id)
-						input.form-control(type='text', name='passphrase', placeholder='Lösning', autocomplete='off')
-						input.btn.btn-danger(type='submit', value='Gissa')
+				else
+					.mission
+						iframe(src=missionurl, frameborder='0', allowfullscreen='allowfullscreen')
+
+		if !done
+			.row
+				.box#formbox
+					.col-lg-12.text-center
+						form.missionform(method='post', action='/')
+							input(type='hidden', name='mission', value=id)
+							input.form-control(type='text', name='passphrase', placeholder='Lösning', autocomplete='off')
+							input.btn.btn-danger(type='submit', value='Gissa')
