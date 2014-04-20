@@ -140,7 +140,7 @@ footer p {
 }
 
 .faces img {
-  float: right;
+  float: bottom;
   position: relative;
   width: 60%;
 }
