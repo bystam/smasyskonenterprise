@@ -52,7 +52,7 @@ missions.push(victory);
 
 app.get('/', function(req, res) {
 	firstMission.wronganswer = false;
-	mail(startMail);
+	//mail(startMail);
 	res.render('mission', firstMission);
 });
 
