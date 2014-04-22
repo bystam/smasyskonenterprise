@@ -5,10 +5,8 @@ var app = express();
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-app.use(express.logger('dev'));
 
 app.use(express.static(__dirname + '/public'))
-app.use(express.urlencoded());
 
 var startMail = {
     from: "It begins <smasyskon@d.kth.se>", // sender address
