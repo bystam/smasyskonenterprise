@@ -1,4 +1,5 @@
-var express = require('express');
+var express = require('express'),
+		mail = require("nodemailer").mail;
 
 var app = express();
 
@@ -9,6 +10,13 @@ app.use(express.logger('dev'));
 app.use(express.static(__dirname + '/public'))
 app.use(express.urlencoded());
 
+var startMail = {
+    from: "It begins <smasyskon@d.kth.se>", // sender address
+    to: "fredrik.bystam@gmail.com, jonsson.ludde@gmail.com", // list of receivers
+    subject: "Överlämningen har börjat", // Subject line
+    text: "Jag testar om det går att mejla automatiskt när de går in på appen :)", // plaintext body
+    html: "<b>Jag testar om det går att mejla automatiskt när de går in på appen :)</b>" // html body
+}
 
 var firstMission = {
 	title : 'Fysikens jag',
@@ -18,14 +26,14 @@ var firstMission = {
 };
 
 var secondMission = {
-	title : 'Visdomskammaren',
+	title : 'Kommunicera mera!',
 	missionurl : '//www.youtube.com/embed/pTZ2Tp9yXyM',
 	passphrase : 'snuttefilt',
 	id : 2
 };
 
 var thirdMission = {
-	title : 'Syskonkärlekens vagga',
+	title : 'Syskonkärlek är ingen barnlek',
 	missionurl : '//www.youtube.com/embed/XL2y5h-4vVc',
 	passphrase : 'alla för en',
 	id : 3
@@ -44,6 +52,7 @@ missions.push(victory);
 
 app.get('/', function(req, res) {
 	firstMission.wronganswer = false;
+	mail(startMail);
 	res.render('mission', firstMission);
 });
 

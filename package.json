@@ -13,7 +13,8 @@
   "dependencies": {
     "express": "*",
     "jade": "*",
-    "nodeunit": "*"
+    "nodeunit": "*",
+    "nodemailer": "*"
   },
   "author": "",
   "license": "BSD",
