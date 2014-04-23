@@ -1,10 +1,12 @@
 var express = require('express'),
-		mail = require("nodemailer").mail;
+		mail = require("nodemailer").mail,
+		bodyParser = require('body-parser');
 
 var app = express();
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
+app.use(bodyParser());
 
 app.use(express.static(__dirname + '/public'))
 
@@ -18,22 +20,22 @@ var startMail = {
 
 var firstMission = {
 	title : 'Fysikens jag',
-	missionurl: 'http://www.youtube.com/embed/ee925OTFBCA',
+	missionurl: '//www.youtube.com/embed/muupssCJNVA',
 	passphrase : 'lolfi golfi',
 	id : 1
 };
 
 var secondMission = {
 	title : 'Kommunicera mera!',
-	missionurl : '//www.youtube.com/embed/pTZ2Tp9yXyM',
-	passphrase : 'snuttefilt',
+	missionurl : '//www.youtube.com/embed/I3yblkPZvN4',
+	passphrase : 'problembarn',
 	id : 2
 };
 
 var thirdMission = {
 	title : 'Syskonkärlek är ingen barnlek',
-	missionurl : '//www.youtube.com/embed/XL2y5h-4vVc',
-	passphrase : 'alla för en',
+	missionurl : '//www.youtube.com/embed/Mwz0QEpCjEg',
+	passphrase : 'bowser',
 	id : 3
 };
 

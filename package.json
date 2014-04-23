@@ -14,7 +14,8 @@
     "express": "*",
     "jade": "*",
     "nodeunit": "*",
-    "nodemailer": "*"
+    "nodemailer": "*",
+    "body-parser": "*"
   },
   "author": "",
   "license": "BSD",
