@@ -39,6 +39,13 @@ var thirdMission = {
 	id : 3
 };
 
+var fourthMission = {
+	title : 'Köp chips för helvete',
+	missionurl : '//www.youtube.com/embed/ajK3m5QrcMs',
+	passphrase  : 'björnica',
+	id : 4
+}
+
 var victory = {
 	title: 'Grattis!',
 	done: true
@@ -48,6 +55,7 @@ var missions = [];
 missions.push(firstMission);
 missions.push(secondMission);
 missions.push(thirdMission);
+missions.push(fourthMission);
 missions.push(victory);
 
 app.get('/', function(req, res) {
